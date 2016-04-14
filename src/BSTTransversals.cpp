@@ -16,20 +16,57 @@ it and understand how testing works .
 
 #include <stdio.h>
 
-struct node{
+struct node
+{
 	struct node * left;
 	int data;
 	struct node *right;
 };
-
-
-void inorder(struct node *root, int *arr){
+void inorder(struct node *root, int *arr)
+{
+	if (root==NULL)
+	{
+		arr = NULL;
+	}
+	int *i = 0,j=0;
+	if (root != NULL)
+	{
+		inorder(root->left, arr);
+		arr[j][i] = root->data;
+		i++;
+		inorder(root->right, arr);
+	}
 	
 }
-void preorder(struct node *root, int *arr){
-	
+void preorder(struct node *root, int *arr)
+{
+	int *i = 0, j = 1;
+	if (root == NULL)
+	{
+		arr = NULL;
+	}
+
+	if (root != NULL)
+	{
+		arr[j][i] = root->data;
+		i++;
+		preorder(root->left, arr);
+		preorder(root->right, arr);
+	}
 }
-void postorder(struct node *root, int *arr){
-	
+void postorder(struct node *root, int *arr)
+{
+	int *i = 0, j = 2;
+	if (root == NULL)
+	{
+		arr = NULL;
+	}
+	if (root != NULL)
+	{
+		postorder(root->left, arr);
+		postorder(root->right, arr);
+		arr[j][i] = root->data;
+		i++;
+	}
 }
 
