@@ -28,10 +28,31 @@ struct node{
 	int data;
 	struct node *right;
 };
-
-
-
 int* BSTRighttoLeftRows(struct node* root)
 {
-    return NULL;
+	if (root == NULL)
+		return NULL;
+	int *a;
+	int j = 0;
+	a = (int*)malloc(100 * sizeof(int));
+	node * list[100];
+	int n = 1,i=0;
+	list[0] = root;
+	while (i < n) {
+		node *curnode = list[i];
+		if (curnode->right) {
+			list[n++] = curnode->right;
+		}
+		if (curnode->left) {
+			list[n++] = curnode->left;
+		}
+		i++;
+	}
+
+	for (int i = 0; i < n; i++) {
+		node *presentnode = list[i];
+		a[j] = presentnode->data;
+		j++;
+	}
+	return a;
 }

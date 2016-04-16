@@ -34,7 +34,10 @@ struct node{
 };
 
 
-struct node * convert_array_to_bst(int *arr, int len){
+struct node * convert_array_to_bst(int *arr, int len)
+{
+	int start = 0, end = len - 1, mid;
+	mid = (start + end) / 2;
 	
 	return NULL;
 }
