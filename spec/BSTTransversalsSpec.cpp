@@ -118,6 +118,7 @@ namespace spec
 			struct node *root = NULL;
 			int nums[10] = {5,2,10,7,12 };
 			int elements = 5;
+			j = 0; k = 0; l = 0;
 			for (int i = 0; i < elements; i++){
 				root = add_node_spec(root, nums[i]);
 			}
@@ -151,7 +152,7 @@ namespace spec
 			for (int i = 0; i < elements; i++){
 				root = add_node_spec(root, nums[i]);
 			}
-
+			j = 0; k = 0; l = 0;
 			int ans[3][10] = {
 				{ 10,30,40,60,65,67,70,80,85,90 },
 				{ 30,10,60,40,70,65,67,80,90,85 },

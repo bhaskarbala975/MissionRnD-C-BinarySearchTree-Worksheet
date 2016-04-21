@@ -53,6 +53,7 @@ struct node* modify(int arr[], int start, int end)
 	root->left = modify(arr, start, mid - 1);
 	root->right = modify(arr, mid + 1, end);
 	return root;
+	/*here i used the technique similar to binary search and solved the problem recusively*/
 	
 }
 

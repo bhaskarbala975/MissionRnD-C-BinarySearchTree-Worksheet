@@ -32,6 +32,8 @@ struct node{
 	struct node *right;
 };
 
-void fix_bst(struct node *root){
+void fix_bst(struct node *root)
+{
+	
 
 }
