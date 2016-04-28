@@ -31,9 +31,49 @@ struct node{
 	int data;
 	struct node *right;
 };
-
+int array[100];
+int index = 0;
+int temp = 0;
+void inorder(struct node *root);
+void bala(struct node *root,int index);
 void fix_bst(struct node *root)
 {
+	if (root == NULL)
+		return;
+	else
+	{
+		inorder(root);
+		bala(root,index);
+	}
+}
+void inorder(struct node *root)
+{
+	if (root != NULL)
+	{
+		inorder(root->left);
+		array[index] = root->data;
+		index++;
+		inorder(root->right);
+	}
+}
+void bala(struct node *root,int index)
+{
 	
-
+	if (root == NULL)
+		return;
+	else
+	{
+		if (index % 2 == 0)
+		{
+			root->data = array[index / 2];
+			bala(root->left,index/2-1);
+			bala(root->right,index/2+1);
+		}
+		else
+		{
+			root->data = array[index / 2 + 1];
+			bala(root->left,index/2);
+			bala(root->right,index/2);
+		}
+	}
 }
